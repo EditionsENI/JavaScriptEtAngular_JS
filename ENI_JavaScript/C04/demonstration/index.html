@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ENI Éditions</title>
+</head>
+
+<body>
+    <script>
+        // Opérateurs logiques 
+        document.writeln("<h3>Opérateurs logiques : </h3>");
+        // Et 
+        document.writeln("<span>ET logique : </span>");
+        document.writeln(true && true);   // vrai 
+        document.writeln(true && false);  // faux 
+        document.writeln(false && true);  // faux 
+        document.writeln(false && false); // faux 
+        document.writeln("<br />");
+        // Ou 
+        document.writeln("<span>OU logique : </span>");
+        document.writeln(true || true);   // vrai 
+        document.writeln(true || false);  // faux 
+        document.writeln(false || true);  // faux 
+        document.writeln(false || false); // faux 
+        document.writeln("<br />");
+        // Non 
+        document.writeln("<span>NON logique : </span>");
+        document.writeln(!true)
+        document.writeln(!false)
+        document.writeln(!null)
+        document.writeln(!0)
+        document.writeln("<br />");
+        // Conditions
+        let age = 18;
+        if (age >= 18) {
+            document.writeln("majeur");
+        } else {
+            document.writeln("mineur");
+        }
+        if (age >= 18) {
+            document.writeln("majeur");
+        } else if (age >= 14) {
+            document.writeln("adolescent");
+        } else {
+            document.writeln("enfant");
+        }
+        document.writeln((age > 18 ? "majeur" : "mineur"));
+        // Switch
+        // Switch 
+        document.writeln("<h4>Switch : </h4>");
+        let aujourdhuiEnChiffre = new Date().getDay();
+        console.log(aujourdhuiEnChiffre);
+        let aujourdhuiLitteral;
+        switch (aujourdhuiEnChiffre) {
+            case 0:
+                aujourdhuiLitteral = "dimanche";
+                break;
+            case 1:
+                aujourdhuiLitteral = "lundi";
+                break;
+            case 2:
+                aujourdhuiLitteral = "mardi";
+                break;
+            case 3:
+                aujourdhuiLitteral = "mercredi";
+                break;
+            case 4:
+                aujourdhuiLitteral = "jeudi";
+                break;
+            case 5:
+                aujourdhuiLitteral = "vendredi";
+                break;
+            case 6:
+                aujourdhuiLitteral = "samedi";
+                break;
+        }
+        document.writeln("Nous sommes " + aujourdhuiLitteral + "!!");
+        // Boucles
+        document.writeln("<h3>Boucles : </h3>");
+        // Déclaration du nombre de secondes 
+        let lancement = 5;
+        // Tant que le nombre de secondes est positif : 
+        while (lancement >= 0) {
+            document.writeln("Décompte : " + lancement + "<br />");
+            lancement--;
+        }
+        document.writeln("Houston … lancement réussi !!");
+        // Do ... while
+        document.writeln("<h4>Do ... while : </h4>");
+        let choix;
+        do {
+            console.log("Formules :")
+            console.log("\n1-entrée/plat/dessert");
+            console.log("\n2-entrée/plat");
+            console.log("\n0-quitter");
+            choix = prompt("\nQuel est ton choix ? ")
+        }
+        while (choix != 0);
+        // FizzBuzz 
+        document.writeln("<h3>FizzBuzz : </h3>");
+        // Déclaration de la variable 
+        let affichage;
+        // Pour chaque chiffre de 1 à 25 inclus : 
+        for (var i = 1; i <= 25; i++) {
+            // Initialisation de la variable à vide 
+            affichage = "";
+            // Si i est un multiple de 3 : 
+            if (i % 3 == 0) {
+                affichage += "Fizz";
+            }
+            // Si i est un multiple de 5 : 
+            // Si i est un multiple de 3 et de 5, la valeur d’affichage est ’FizzBuzz’ 
+            if (i % 5 == 0) {
+                affichage += "Buzz";
+            }
+            // Si i n’est ni un multiple ni de 3 ni un multiple de 5, on affecte la valeur de i à affichage 
+            if (affichage == "") {
+                affichage += i;
+            }
+            document.writeln(affichage);
+        }
+        // Indices de listes et d'objets
+        let leDinerDeCons = {
+            'brochant': 'Thierry Lhermitte',
+            'pignon': 'Jacques Villeret',
+            'leblanc': 'Francis Huster',
+            'cheval': 'Daniel Prévost'
+        }
+        for (nomFictif in leDinerDeCons) {
+            console.log(nomFictif);
+        }
+    </script>
+</body>
+
+</html>
