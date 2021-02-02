@@ -1,0 +1,66 @@
+<!-- C:\JavaScriptEtAngular\JavaScript\C05\miseEnPratique\
+index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ENI éditions</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // Retourne le plus grand des deux nombres 
+        function maxDeDeuxNombres(a, b) {
+            // Si le premier est plus grand que le deuxième 
+            if (a > b) {
+                // Alors c'est le premier qui est retourné 
+                return a;
+            } else {
+                // Sinon c'est le deuxième 
+                return b;
+            }
+        }
+        function maxDeDeuxNombresBis(a, b) {
+            return (a > b ? retour = a : retour = b);
+        }
+        function maxDeTroisNombre(a, b, c) {
+            // Si le premier est plus grand que le deuxième 
+            if (a > b) {
+                // alors le plus grand des trois est soit le premier 
+                if (a > c) {
+                    return a;
+                } else {
+                    // soit le troisième 
+                    return c;
+                }
+            } else {
+                // Sinon, c'est soit le deuxième 
+                if (b > c) {
+                    return b;
+                } else {
+                    // Soit le troisième 
+                    return c;
+                }
+            }
+        }
+        function maxDeTroisNombreBis(a, b, c) {
+            let x = maxDeDeuxNombres(a, b);
+            let y = maxDeDeuxNombres(b, c);
+            let resultat = maxDeDeuxNombres(x, y);
+            return resultat;
+        }
+        function maxDeTroisNombreBisBis(a, b, c) {
+            return maxDeDeuxNombre(maxDeDeuxNombre(a, b),
+                maxDeDeuxNombre(b, c));
+        }
+        function factorielle(n) {
+            // Si n est égal à 0, alors la récursivité est terminée 
+            if (n === 0) return 1;
+            // Sinon, on rappelle la fonction avec l'entier immédiatement inférieur 
+            else return n * factorielle(n - 1);
+        } 
+    </script>
+</body>
+
+</html>
