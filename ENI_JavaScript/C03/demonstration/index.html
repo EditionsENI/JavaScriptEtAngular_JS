@@ -1,0 +1,99 @@
+<!-- C:\ENI_JavaScript\C03\demonstration\index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ENI éditions</title>
+</head>
+
+<body>
+    <script>
+        // Déclaration de variable sans type 
+        let leNomDeMaVariable;
+        // Utilisation de l’opérateur typeof 
+        let maVariable01;
+        document.writeln(typeof maVariable01);
+        // Affectation à l’initialisation        
+        let maVariable02 = " <p>ENI éditions</p>";
+        document.writeln(maVariable02);
+        // Utilisation d'une variable comme valieur d'initialisation
+        let ecole = 42;
+        let inodeRoot = ecole;
+        // Nombres
+        let samael;
+        samael = 0b0000001010011010;   // précédé par 0b : binaire 
+        samael = 01232;                // précédé par 0 : octale 
+        samael = 666;                  // décimale 
+        samael = 0x29a;                // précédé par 0x : hexadécimale
+        // Calculs
+        let calcul = 1;                   // calcul vaut 1 
+        calcul = 1 + 3;                   // calcul vaut 4 
+        calcul = 4 - 1                    // calcul vaut 3  
+        calcul = calcul * 100;            // calcul vaut 300 (3*100) 
+        let diviseur = 10;                // diviseur vaut 10   
+        calcul = calcul / diviseur;       // calcul vaut 30 (300/10)
+        // Nombres a virgule
+        let pi = 3.14;
+        // Incrémentation et décrémentation
+        calcul = calcul + 1
+        calcul = calcul - 1;
+        calcul++;
+        calcul--;
+        // Opérations mathématiques courantes
+        let prix = 20;                          // prix vaut 20 
+        prix -= 10;                             // prix vaut 10 (20 - 10) 
+        prix *= 2;                              // prix vaut 20 (10 * 2) 
+        prix /= 2;                              // prix vaut 10 (20 / 2)
+        // Chaines de caractères
+        let jeuRadio = "<p>K. Poulsen a fait l’acquisition d’une Porsche</p>";
+        let aeomc = "C\’est une bonne situation ça, scribe ?";
+        // Concaténation 
+        let titre =
+            "<p>Daenerys du typhon de la Maison Targaryen, première du nom, "
+            + "reine de Meereen, "
+            + "reine des Andals, de Rhoynar et des Premiers Hommes,"
+            + "suzeraine des Sept Couronnes et Protectrice du Royaume, "
+            + "khaleesi de la Grande Mer Herbeuse,"
+            + "mère des Dragons<p>";
+        document.writeln("\tDaenerys : " + titre);
+        // Concaténation de chaînes de caractères 
+        let premier = "Jean-Pierre";
+        let deuxieme = "Jean";
+        let troisieme = "Pierre";
+        let quatrieme = "TiPich";
+        let cinquieme = "le grand Bob";
+        let concat = premier + ", " + deuxieme + ", " + troisieme + "," + quatrieme + " et " + cinquieme + " vont au bois !!";
+        document.writeln("<p>" + concat + "</p>");
+        let ageDeRaison = 7;
+        let gizeh = "3";
+        let authentificationDiabloIII = gizeh + ageDeRaison;        // authentificationDiabloIII vaut 37 et pas 10
+        // Tableaux
+        let listeDeCourses = ["soja", "carottes", "maïs"];
+        let listeDeCourses = [
+            ["carottes", 2],
+            ["pommes", 5],
+            ["pamplemousse", 1],
+            ["courgettes", 1]
+        ];
+        let chiens = ["Akamaru", "Diabolo", "Scooby", "Mirza", "Paf"];
+        // chiens[0] vaut ’Diabolo’. 
+        // chiens[3] vaut ’Mirza’. D’ailleurs, l’avez-vous vu ?
+        let europe = ["France", "Espagne", "URSS", "Portugal",
+            "Italie"];
+        document.writeln("<b>" + europe + "</b>");
+        europe[2] = "Russie";
+        document.writeln("<b>" + europe + "</b>");
+        // push et unshift
+        let sc2 = ["Raynor", "Kerrigan"];
+        sc2.push("Nova", "Stukov");        // [Raynor", "Kerrigan", "Nova", "Stukov"] 
+        sc2.unshift("Tycchus");            // ["Tycchus", "Raynor", "Kerrigan", "Nova", "Stukov"] 
+        // pop et shift
+        let wc3 = ["Ragnaros", "Maiev", "Medivh", "Thrall", "Sylvanas"];
+        wc3.pop();     // On retire Sylvanas 
+        wc3.pop();     // On retire Thrall 
+        wc3.shift();   // On retire Ragnaros 
+    </script>
+</body>
+
+</html>

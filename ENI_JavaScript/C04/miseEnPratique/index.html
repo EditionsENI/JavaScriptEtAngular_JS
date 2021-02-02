@@ -1,0 +1,47 @@
+<!-- C:\JavaScriptEtAngular\JavaScript\C04\miseEnPratique\index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ENI Éditions</title>
+</head>
+
+<body>
+    <script>
+        document.writeln("<h4>Les nombres de 0 à 200</h4>");
+        // En commencant par zéro et jusqu’a ce qu’on soit arrivé  à 200 avec un pas de 1 : 
+        for (let i = 0; i <= 200; i++) {
+            // On écrit le numéro courant 
+            document.writeln(i);
+        }
+        document.writeln("<h4>La suite de Fibonacci de 1 à 666 </h4>");
+        let precedentDuPrecedent = 0;
+        let precedent = 1;
+        let somme = 0;
+        while (precedentDuPrecedent + precedent < 666) {
+            // On additione le précédent et celui d’avant 
+            somme = precedentDuPrecedent + precedent;
+            // Le précédent devient le précédent du précédent 
+            precedentDuPrecedent = precedent;
+            // La somme devient le précédent pour la prochaine 
+            itération
+            precedent = somme;
+            document.writeln(somme);
+        }
+        document.writeln("<h4>Les nombres premiers de 2 à 66 </h4>");
+        for (let i = 2; i <= 66; i++) {
+            let divisible = false;
+            for (j = 2; j < i; j++) {
+                // Pour tous les nombres inférieurs à i : 
+                if (i % j == 0)
+                    divisible = true;
+            }
+            // Si aucun nombre ne divise i alors c’est un nombre premier.
+            if (!divisible)
+                document.writeln(i);
+        } 
+    </script>
+</body>
+
+</html>

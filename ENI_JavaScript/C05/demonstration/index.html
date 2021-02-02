@@ -1,0 +1,109 @@
+<!-- C:\JavaScriptEtAngular\JavaScript\C05\demonstration\index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ENI éditions</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // Définition de la fonction 
+        function fLois() {
+            document.writeln("Un robot ne peut porter atteinte à un être humain, ni, en restant passif, permettre qu'un être humain soit exposé au danger.< br /> ")
+            document.writeln("Un robot doit obéir aux ordres qui lui sont donnés par un être humain, sauf si de tels ordres entrent en conflit avec la première loi.< br /> ");
+            document.writeln("Un robot doit protéger son existence tant que cette protection n'entre pas en conflit avec la première ou la deuxième loi.< br /> ");
+            document.writeln("--- Isaac ASIMOV - Cercle vicieux ---< br /> ");
+            document.writeln("<br /><br />");
+        }
+        // Appel simple 
+        document.writeln("<h3>Appel d'une fonction</h3>")
+        fLois();
+        // Appel dans une fonction 
+        document.writeln("<h3>Appel d'une fonction dans une boucle for </h3 > ")
+        for (let i = 1; i < 10; i++) {
+            document.writeln("<h4>" + i + "</h4>")
+            fLois();
+        }
+        // Fonctions : 
+        // fMultiplication - Multiplication d'un nombre à l'extérieur de la fonction par 1337 
+        function fMultiplication() {
+            leet = 1337;
+            document.writeln(nbreDeGeek + "*" + leet + "=" + nbreDeGeek * leet);
+        }
+
+        // Appels 
+        // Appel de fMultiplication 
+        document.writeln("<h4>fMultiplication</h4>");
+        nbreDeGeek = 56;
+        fMultiplication();
+
+        // Fonctions : 
+        // fPortee - Essai de portée d'une variable locale 
+        function fPortee() {
+            let uneVariableLocale = "Une variable locale";
+            document.writeln("À l'intérieur de la fonction => uneVariableGlobale = " + uneVariableGlobale + "<br />");
+            document.writeln("À l'intérieur de la fonction => uneVariableLocale = " + uneVariableLocale + "<br />");
+        }
+        // Appels 
+        // Appel de fPortee 
+        document.writeln("<h4>fPortee</h4>");
+        let uneVariableGlobale = "Une variable globale";
+        fPortee();
+        document.writeln("A l'extérieur de la fonction => uneVariableGlobale = " + uneVariableGlobale + "<br />");
+        // document.writeln("A l'extérieur de la fonction => uneVariableLocale = " + uneVariableLocale + "<br />");
+
+        // Fonctions : 
+        // fArguments 
+        function fArguments(argument01, argument02, argument03) {
+            document.writeln("argument01 => " + argument01 + "<br/>");
+            document.writeln("argument02 => " + argument02 + "<br/>");
+            document.writeln("argument03 => " + argument03 + "<br/>");
+        }
+        // Appels 
+        // Appel de fArguments 
+        document.writeln("<h3>Fonctions avec arguments</h3>");
+        let uneChaine = "Une chaîne de caractères";
+        let unChiffre = 1337;
+        let unTableau = ["Raphael", "Anais", "Rose", "Anne-Marine"];
+        fArguments(uneChaine, unChiffre, unTableau);
+
+        // Fonctions : 
+        // fDivision 
+        // Le deuxième argument est égal a 1 si non spécifié dans l'appel de la fonction 
+        function fDivision(argument01, argument02 = 1) {
+            document.writeln("La division du premier argument par le deuxième = " + argument01 / argument02);
+        }
+        // Appel de fDivision 
+        document.writeln("<h4>Fonctions avec arguments indéfinis</h4>");
+        fDivision(50);
+
+        // Fonctions : 
+        // fAddition - Le nombre d'arguments n'est pas connu à l'avance 
+        function fAddition() {
+            // Initialisation du résultat 
+            let resultat = 0;
+            for (i = 0; i < arguments.length; i++) {
+                resultat += arguments[i];
+            }
+            document.writeln("L'addition de tous les arguments est égale à " + resultat);
+        }
+        // Appels 
+        // Appel de fAddition 
+        document.writeln("<h4>Fonctions sans un nombre d'arguments connu</h4>");
+        fAddition(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+        // Fonctions : 
+        function somme(argument01, argument02) {
+            return argument01 + argument02
+        }
+        // Appels 
+        document.writeln("<h3>Retour de fonction</h3>");
+        document.writeln("Avec une fonction classique : " + somme(2, 5) + "<br />");
+        let soustraction = (argument01, argument02) => { return argument01 - argument02 };
+        document.writeln("Avec une fonction fléchée : " + soustraction(3, 5) + "<br />");
+    </script>
+</body>
+
+</html>
