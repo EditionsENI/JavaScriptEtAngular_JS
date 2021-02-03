@@ -1,0 +1,119 @@
+<!-- C:\JavaScriptEtAngular\JavaScript\C06\demonstration\index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ENI Éditions</title>
+</head>
+
+<body>
+    <script>
+        // Création d'objets uniques - duplication de code 
+        let monPremierObjet = {
+            nom: "Turing",
+            prenom: "Alan",
+            presenteToi() {
+                console.log(this.nom + " " + this.prenom);
+            }
+        }
+        let monDeuxiemeObjet = {
+            nom: "Morcom",
+            prenom: "Christopher",
+            presenteToi() {
+                console.log(this.nom + " " + this.prenom);
+            }
+        }
+        // Création d'une fonction de création d'une personne 
+        function creerUnePersonne(nom, prenom) {
+            let monObjet = new Object();
+            monObjet.nom = nom;
+            monObjet.prenom = prenom;
+            monObjet.presenteToi = function () {
+                console.log(this.nom + " " + this.prenom);
+            };
+            return monObjet;
+        }
+        let turing = creerUnePersonne("Turing", "Alan");
+        let morcom = creerUnePersonne("Morcom", "Christopher");
+        turing.presenteToi();
+        morcom.presenteToi();
+
+        function Personne(nom, prenom) {
+            this.nom = nom;
+            this.prenom = prenom;
+            this.presenteToi = function () {
+                console.log(this.nom + " " + this.prenom);
+            }
+        }
+        let alan = new Personne("Turing", "Alan");
+        let christopher = new Personne("Morcom", "Christopher");
+
+        // Fonction 
+        // disBonjour 
+        function disBonjour() {
+            return "Bonjour";
+        }
+        // Objets 
+        // nomprenom 
+        function Identite(nom, prenom) {
+            this.nom = nom;
+            this.prenom = prenom;
+        }
+        // Avenger 
+        function Avenger(nom, prenom, arme) {
+            this.identite = new Identite(nom, prenom);
+            this.arme = arme;
+            this.bjr = disBonjour();
+        }
+        let thor = new Avenger("Thor", "Odison", "Marteau");
+
+        // Classes
+        class Chat {
+            constructor(nom, couleur, caractere) {
+                console.log("Un chat vient d'être instancié");
+                this._nom = nom || "Guizmo";
+                this.couleur = couleur || "Tigré";
+                this.caractere = caractere || "Endormi";
+            }
+            // Getters 
+            getNom() {
+                return this._nom;
+            }
+            // Setters 
+            setNom(nom) {
+                if (nom !== "Patatron") {
+                    this._nom = nom;
+                }
+            }
+        }
+        let unChat = new Chat("Pompom", "Gris", "Foufou");
+        console.log(unChat);
+        unChat.setNom("Patatron");
+        console.log(unChat);
+        unChat.setNom("Poutrelle");
+        console.log(unChat);
+
+        // Menu
+        class Menu {
+            constructor() {
+                console.log("Un menu a été instancié.");
+            }
+            static ENTREE = "Coleslaw/Brochettes de              champignons/Dés de tofu";
+            static PLAT = "Fajitas/Risotto/Purée de pois          chiches";
+            static DESSERT = "CheeseCake/Cannelés/Tiramisu";
+            static afficherLeRestaurant() {
+                document.writeln("<h4>Han shot first - Restaurant gastronomique</h4 > ")
+            }
+        }
+        Menu.afficherLeRestaurant();
+        document.writeln("<br />");
+        document.write(Menu.ENTREE);
+        document.writeln("<br />");
+        document.write(Menu.PLAT);
+        document.writeln("<br />");
+        document.write(Menu.DESSERT); 
+    </script>
+</body>
+
+</html>
